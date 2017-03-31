@@ -1,34 +1,26 @@
----
-title: "RNA-seq Generation"
-output:
-  html_document:
-    dev: svg
-    toc: true
-  github_document:
-    dev: svg
-    toc: true
----
+RNA-seq Generation
+================
 
-```{r setup, include=FALSE}
-library(ggplot2)
-library(reshape2)
-knitr::opts_chunk$set(echo = TRUE)
-plot.num <- 20
-devtools::load_all()
-```
+-   [How to install](#how-to-install)
+-   [RNA Random expression](#rna-random-expression)
+    -   [Normal](#normal)
+    -   [Log Normal](#log-normal)
+    -   [Real gene expression](#real-gene-expression)
 
-# How to install
+How to install
+==============
 
-```{r, eval=FALSE}
+``` r
 devtools::install_github('averissimo/gen.rna.seq.data')
 ```
 
+RNA Random expression
+=====================
 
-# RNA Random expression
+Normal
+------
 
-## Normal
-
-```{r gaussian, fig.height=10}
+``` r
 my.random <- function(len, mean = runif(1, min = 0, max= 1), sd = runif(1, min = .5, max= 1.5)) { 
   rnorm(len, mean = mean, sd = sd)
 }
@@ -53,9 +45,12 @@ ggplot(dat.normal, aes(meas, colour = ix.me)) +
   ggtitle('Generated gene expression (Gaussian)')
 ```
 
-## Log Normal
+![](/home/averissimo/work/rpackages/gen.rna.seq/README_files/figure-markdown_github/gaussian-1.svg)
 
-```{r log-normal, fig.height=10}
+Log Normal
+----------
+
+``` r
 my.random <- function(len, 
                       meanlog = log(runif(1, min = 0, max= 3)), 
                       sdlog = log(1 + runif(1, min = 0.08, max= 1.5)),
@@ -87,11 +82,14 @@ ggplot(dat.log, aes(meas, colour = ix.me)) +
   ggtitle('Generated gene expression (Log-normal)')
 ```
 
-## Real gene expression
+![](/home/averissimo/work/rpackages/gen.rna.seq/README_files/figure-markdown_github/log-normal-1.svg)
+
+Real gene expression
+--------------------
 
 Using breast cancer data
 
-```{r brca, fig.height=10}
+``` r
 library(brca.data)
 sample.data <- fpkm.per.tissue$solid.tissue.normal
 sample.data.sd <- sapply(1:nrow(sample.data), function(ix) {sd(sample.data[ix,])})
@@ -109,4 +107,4 @@ ggplot(sample.data.mel, aes(value, colour = Var1)) +
   ggtitle('Gene expression from BRCA')
 ```
 
-
+![](/home/averissimo/work/rpackages/gen.rna.seq/README_files/figure-markdown_github/brca-1.svg)
