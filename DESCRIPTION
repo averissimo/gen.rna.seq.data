@@ -5,11 +5,12 @@ Version: 0.1.0
 Author: André Veríssimo
 Maintainer: André Veríssimo <andre.verissim@tecnico.ulisboa.pt>
 Description: Generates gene level expression from RNA-seq data using
-    a log-normal distribution
-License: GPl-v3
+    a log-normal distribution.
+License: GPL-3
 Encoding: UTF-8
 Imports:
     ggplot2,
-    reshape2
+    reshape2,
+    stats
 LazyData: true
 RoxygenNote: 6.0.1

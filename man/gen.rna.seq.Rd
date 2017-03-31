@@ -4,8 +4,8 @@
 \alias{gen.rna.seq}
 \title{Generate RNA-seq data}
 \usage{
-gen.rna.seq(len, meanlog = log(runif(1, min = 0, max = 3)), sdlog = log(1 +
-  runif(1, min = 0.08, max = 1.5)))
+gen.rna.seq(len, meanlog = log(stats::runif(1, min = 0, max = 3)),
+  sdlog = log(1 + stats::runif(1, min = 0.08, max = 1.5)))
 }
 \arguments{
 \item{len}{number of observations to be generated}
