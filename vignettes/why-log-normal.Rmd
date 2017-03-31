@@ -5,7 +5,7 @@ output:
     dev: svg
     toc: true
   github_document:
-    dev: svg
+    dev: png
     toc: true
 ---
 

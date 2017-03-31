@@ -45,7 +45,7 @@ ggplot(dat.normal, aes(meas, colour = ix.me)) +
   ggtitle('Generated gene expression (Gaussian)')
 ```
 
-![](/home/averissimo/work/rpackages/gen.rna.seq/README_files/figure-markdown_github/gaussian-1.svg)
+![](/home/averissimo/work/rpackages/gen.rna.seq/README_files/figure-markdown_github/gaussian-1.png)
 
 Log Normal
 ----------
@@ -82,7 +82,7 @@ ggplot(dat.log, aes(meas, colour = ix.me)) +
   ggtitle('Generated gene expression (Log-normal)')
 ```
 
-![](/home/averissimo/work/rpackages/gen.rna.seq/README_files/figure-markdown_github/log-normal-1.svg)
+![](/home/averissimo/work/rpackages/gen.rna.seq/README_files/figure-markdown_github/log-normal-1.png)
 
 Real gene expression
 --------------------
@@ -107,4 +107,4 @@ ggplot(sample.data.mel, aes(value, colour = Var1)) +
   ggtitle('Gene expression from BRCA')
 ```
 
-![](/home/averissimo/work/rpackages/gen.rna.seq/README_files/figure-markdown_github/brca-1.svg)
+![](/home/averissimo/work/rpackages/gen.rna.seq/README_files/figure-markdown_github/brca-1.png)
